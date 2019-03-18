@@ -1,0 +1,20 @@
+f=imread('C:\Users\15pr\Desktop\第三次\第4-次作业\test4 copy.bmp');
+figure
+imshow(f)
+w1=fspecial('gaussian',[3 3],1.5);
+g=imfilter(f,w1,'conv','same');
+figure;
+imshow(g);
+title('高斯滤波3*3')
+w2=fspecial('gaussian',[5 5],1.5);
+g=imfilter(f,w2,'conv','same');
+
+figure;
+imshow(g)
+title('高斯滤波5*5')
+w3=fspecial('gaussian',[7 7],1.5);
+g=imfilter(f,w3,'conv','same');
+
+figure;
+imshow(g);
+title('高斯滤波7*7')

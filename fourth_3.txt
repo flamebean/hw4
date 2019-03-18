@@ -1,0 +1,26 @@
+clear;
+f=imread('C:\Users\15pr\Desktop\第三次\第4-次作业\test4 copy.bmp');
+figure
+imshow(f);
+title('原图')
+w1=fspecial('unsharp',0.2);
+g=imfilter(f,w1,'conv','same');
+figure;
+imshow(g)
+title('unsharp,3*3')
+
+[g,t]=edge(f,'sobel');
+figure;
+imshow(g)
+title('sobel,3*3')
+
+w3=fspecial('laplacian',0.2)
+g=imfilter(f,w3,'conv','same');
+figure;
+imshow(g)
+title('laplacian,3*3')
+
+[g,t]=edge(f,'canny');
+figure;
+imshow(g)
+title('Canny,3*3')
